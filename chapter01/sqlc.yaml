@@ -1,0 +1,61 @@
+version: "1"
+packages:
+ # nombre del pkg
+ - name: "chapter01"
+
+   # nombre directorio go
+   path: "gen"
+
+   # nombre del directorio que contiene las consultas SQL
+   # que sqlc utilizará para generar el código.go
+   queries: "queries/"
+
+   # directorio que contiene archivos SQL
+   # que se utilizarán para generar todos los archivos relevantes.go
+   schema: "db/"
+
+   # Especifica el motor de base de datos que se utilizará:
+   # sqlc admite MySQL o Postgres.
+   engine: "postgresql"
+   # sql_engine: "database/sql"
+
+   # true generará etiquetas struct with db
+   emit_db_tags: true
+
+   # true indica a sqlc que admita consultas preparadas en el código generado.
+   emit_prepared_queries: false
+
+   # true indicará a sqlc que genere la interfaz del interrogador.
+   emit_interface: false
+
+   # true indicará a sqlc que refleje el nombre de la estructura en el nombre de la tabla.
+   emit_exact_table_names: false
+
+   # true le indicará a sqlc que devuelva un segmento vacío para devolver datos en muchos lados de la tabla.
+   emit_empty_slices: false
+
+   # true indicará a sqlc que permita que un paquete externo acceda a la declaración SQL
+   # utilizada en el código generado automáticamente.
+   emit_exported_queries: false
+
+   # true generará la estructura con etiquetas JSON.
+   emit_json_tags: true
+
+   # Esta configuración puede aceptar lo siguiente:
+   # camel, pascal, snakey none. El estilo de mayúsculas y minúsculas
+   # se utiliza para las etiquetas JSON utilizadas en la estructura.
+   # Normalmente, esto se usa con .emit_json_tags
+   json_tags_case_style: "camel"
+
+   # Nombre utilizado como nombre de archivo para el archivo de base de datos generado automáticamente.
+   # output_db_file_name: "db.go"
+
+   # Nombre utilizado como nombre de archivo para el archivo de modelo generado automáticamente
+   # output_models_file_name: "dbmodels.go"
+
+   # Nombre utilizado como nombre de archivo para el archivo de consulta generado automáticamente
+   # output_querier_file_name: "dbquerier.go"
+
+   # Sufijo que se utilizará como parte del archivo de consulta generado automáticamente.
+   output_files_suffix: "_gen"
+
