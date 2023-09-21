@@ -3,7 +3,7 @@ packages:
  # nombre del pkg
  - name: "chapter01"
 
-   # nombre directorio go
+   # nombre directorio go que contendra el pkg chapter01
    path: "gen"
 
    # nombre del directorio que contiene las consultas SQL

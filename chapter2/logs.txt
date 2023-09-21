@@ -1,0 +1,6 @@
+[INFO] 2023/09/21 09:05 Starting the application...
+[INFO] 2023/09/21 09:05 Database connection fine
+[INFO] 2023/09/21 09:05 Success - user creation
+[INFO] 2023/09/21 09:05 Success - exercise creation
+[INFO] 2023/09/21 09:05 Success - updating workout
+[INFO] 2023/09/21 09:05 Application complete

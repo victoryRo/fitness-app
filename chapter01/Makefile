@@ -26,11 +26,10 @@ postgresup:
 	podman container run -d --name postgres-db \
 	-e POSTGRES_PASSWORD=$(DB_PWD) \
 	-v $(PWD):/usr/share/chapter01 \
-	-p 5432:5432 \
+	-p 54320:5432 \
 	$(DB_NAME)
 
 postgresdown:
-	@echo "stops the database container and removes it"
 	podman container stop postgres-db || true && podman container rm postgres-db || true
 
 psql:

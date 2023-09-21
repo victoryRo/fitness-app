@@ -1,0 +1,2 @@
+[INFO] 2023/09/18 14:46 This is a info message, with colors (if the output is terminal)
+[INFO] 2023/09/18 14:46 This is a info message, with colors (if the output is terminal)
