@@ -8,7 +8,7 @@ DB_TYPE ?= postgres
 DB_USER ?= postgres
 
 # database password
-DB_PWD ?= mysecretpassword
+DB_PWD ?= SecretPassword
 
 # psql URL
 IP=`podman inspect --format '{{ .NetworkSettings.IPAddress }}' postgres-db`
@@ -21,11 +21,11 @@ SQLC_YAML ?= ./sqlc.yaml
 .PHONY : db_up db_down teardown_recreate run_db generate build create_db
 
 db_up:
-	podman container run -d --name postgres-db \
-	-e POSTGRES_PASSWORD=$(DB_PWD) \
+	podman container run --name postgres-db \
+	-e POSTGRES_PASSWORD=SecretPassword \
 	-v $(PWD):/usr/share/chapter2 \
-	-p 5432:5432 \
-	$(DB_NAME)
+	-p 54320:5432 \
+	-d $(DB_NAME)
 
 run_db:
 	podman exec -it postgres-db \

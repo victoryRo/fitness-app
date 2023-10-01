@@ -11,6 +11,7 @@ import (
 )
 
 func main() {
+	// psqlinfo := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable", host, port, user, password, dbname)
 	dbURI := fmt.Sprintf("postgres://%s:%s@%s:%d/%s?sslmode=disable",
 		GetAsString("DB_USER", "postgres"),
 		GetAsString("DB_PASSWORD", "mysecretpassword"),

@@ -26,7 +26,7 @@ func main() {
 
 	dbURI := fmt.Sprintf("postgres://%s:%s@%s:%d/%s?sslmode=disable",
 		GetAsString("DB_USER", "postgres"),
-		GetAsString("DB_PASSWORD", "mysecretpassword"),
+		GetAsString("DB_PASSWORD", "SecretPassword"),
 		GetAsString("DB_HOST", "localhost"),
 		GetAsInt("DB_PORT", 5432),
 		GetAsString("DB_NAME", "postgres"),
@@ -41,7 +41,7 @@ func main() {
 
 	// verificamos la conexion
 	if err := db.Ping(); err != nil {
-		logger.Logger.Errorf("Error from database ping : %s", err.Error())
+		logger.Logger.Errorf("Error from database ping : %s password %s", err.Error(), GetAsString("DB_PASSWORD", "SecretPassword"))
 	}
 
 	logger.Logger.Info("Database connection fine")

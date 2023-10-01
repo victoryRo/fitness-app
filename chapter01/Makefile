@@ -19,7 +19,7 @@ PSQLURL ?= $(DB_TYPE)://$(DB_USER):$(DB_PWD)@$(IP):5432/$(DB_NAME)
 # sqlc yaml file
 SQLC_YAML ?= ./sqlc.yaml
 
-.PHONY : postgresup postgresdown psql createdb teardown_recreate generate
+.PHONY : postgresup postup postgresdown psql createdb teardown_recreate generate
 
 postgresup:
 	@echo "Run the database container, volume, password ok"
@@ -28,6 +28,15 @@ postgresup:
 	-v $(PWD):/usr/share/chapter01 \
 	-p 54320:5432 \
 	$(DB_NAME)
+
+postup:
+	podman container run --name store \
+    -e POSTGRES_USER=postgres \
+    -e POSTGRES_PASSWORD=postgres \
+    -e POSTGRES_DB=postgres \
+	-v $(PWD):/usr/share/chapter01 \
+    -p 54320:5432 \
+    -d postgres:latest
 
 postgresdown:
 	podman container stop postgres-db || true && podman container rm postgres-db || true
