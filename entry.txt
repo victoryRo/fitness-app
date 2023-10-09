@@ -1,4 +1,4 @@
-Within the fitness project
+within the fitness project
 
 podman run --rm --name jaeger \
 -e COLLECTOR_ZIPKIN_HOST_PORT=:9411 \
