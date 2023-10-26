@@ -20,14 +20,16 @@ var (
 	// TrimSpace limpia los espacios al inicio y al final del string
 	Version string = strings.TrimSpace(version)
 
-	//go.embed version/version.txt
+	//go:embed version/version.txt
 	version string
 
-	//go.embed static/*
-	staticEmbed embed.FS // Un FS es una colección de archivos de solo lectura
+	//go:embed static/*
+	staticEmbed embed.FS
 
-	//go.embed tmpl/*.html
-	tmplEmbed embed.FS // Un FS es una colección de archivos de solo lectura
+	//go:embed tmpl/*.html
+	tmplEmbed embed.FS
+
+	// Un FS es una colección de archivos de solo lectura
 )
 
 type staticHandler struct {
@@ -108,11 +110,11 @@ func main() {
 
 	srv := &http.Server{
 		Handler:      router,
-		Addr:         "127.0.0.1:3333",
+		Addr:         "127.0.0.1:3111",
 		WriteTimeout: 15 * time.Second,
 		ReadTimeout:  15 * time.Second,
 	}
 
-	fmt.Println("Running server on port: 3333")
+	fmt.Println("Running server on port: 3111")
 	log.Fatal(srv.ListenAndServe())
 }

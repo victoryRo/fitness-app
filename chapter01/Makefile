@@ -27,7 +27,7 @@ postgresup:
 	-e POSTGRES_PASSWORD=$(DB_PWD) \
 	-v $(PWD):/usr/share/chapter01 \
 	-p 54320:5432 \
-	$(DB_NAME)
+	-d $(DB_NAME)
 
 postup:
 	podman container run --name store \
