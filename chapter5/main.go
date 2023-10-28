@@ -114,7 +114,10 @@ func storeAuthenticated(w http.ResponseWriter, r *http.Request, v bool) {
 // authenticationHandler maneja la autenticación
 func authenticationHandler(w http.ResponseWriter, r *http.Request) {
 	result := "Login "
-	r.ParseForm()
+	err := r.ParseForm()
+	if err != nil {
+		return 
+	}
 
 	if validateUser(r.FormValue("username"), r.FormValue("password")) {
 		storeAuthenticated(w, r, true)
