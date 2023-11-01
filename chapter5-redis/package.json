@@ -1,0 +1,16 @@
+{
+  "name": "fitness",
+  "version": "0.0.2",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scanTailwind": "npx tailwindcss -i ./src/css/input.css -o ./src/css/output.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.3.5"
+  }
+}
