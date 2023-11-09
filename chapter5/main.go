@@ -116,7 +116,7 @@ func authenticationHandler(w http.ResponseWriter, r *http.Request) {
 	result := "Login "
 	err := r.ParseForm()
 	if err != nil {
-		return 
+		return
 	}
 
 	if validateUser(r.FormValue("username"), r.FormValue("password")) {

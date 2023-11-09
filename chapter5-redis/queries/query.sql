@@ -114,7 +114,7 @@ values ($1,
 -- name: UpsertSet :one
 INSERT INTO app.sets (Exercise_Id, Weight)
 values ($1,
-        $j) ON CONFLICT (Set_ID) DO
+        $2) ON CONFLICT (Set_ID) DO
 UPDATE
     SET Exercise_Id = EXCLUDED.Exercise_Id, Weight = EXCLUDED.Weight
     RETURNING Set_ID;

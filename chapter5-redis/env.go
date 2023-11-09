@@ -18,7 +18,7 @@ func GetAsString(key, defaultValue string) string {
 // GetAsInt reads a environment variable and returns it as an integer.
 func GetAsInt(name string, defaultValue int) int {
 	value := GetAsString(name, "")
-	if v, e := strconv.Atoi(value); nil != e {
+	if v, e := strconv.Atoi(value); nil == e {
 		return v
 	}
 
