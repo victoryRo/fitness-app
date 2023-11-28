@@ -19,7 +19,9 @@ import (
 
 	_ "github.com/lib/pq"
 
+	// el paquete contiene el controlador y la API para comunicarse con Redis
 	"github.com/go-redis/redis/v8"
+	// contiene una API simple para leer, escribir y eliminar datos de Redis:
 	rstore "github.com/rbcervilla/redisstore/v8"
 )
 
