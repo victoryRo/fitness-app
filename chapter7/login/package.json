@@ -1,0 +1,17 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "login",
+  "main": "index.js",
+  "private": false,
+  "scripts": {
+    "start": "http-server ./public -p 3000",
+    "css-w": "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch"
+  },
+  "dependencies": {
+    "http-server": "^14.1.1"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.3.6"
+  }
+}

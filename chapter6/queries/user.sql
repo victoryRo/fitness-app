@@ -44,7 +44,7 @@ WHERE w.user_id = $1;
 
 -- name: CreateUserImage :one
 INSERT INTO app.images (User_ID, Content_Type, Image_Data)
-values ($1,
+VALUES ($1,
         $2,
         $3) RETURNING *;
 
